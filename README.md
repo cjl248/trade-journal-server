@@ -17,6 +17,14 @@
 
 Running object generator with `rails g graphql:object` (https://graphql-ruby.org/schema/generators.html) creates a type with the same name if the model exists: `rails g graphql:object trade --skip-node`
 
+Case against resolvers in a simple app
+
+First, ask yourself …
+Do you really need a Resolver? Putting logic in a Resolver has some downsides:
+
+Since it’s coupled to GraphQL, it’s harder to test than a plain ol’ Ruby object in your app
+Since the base class comes from GraphQL-Ruby, it’s subject to upstream changes which may require updates in your code
+https://graphql-ruby.org/fields/resolvers.html#first-ask-yourself-
 
 
 

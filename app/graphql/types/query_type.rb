@@ -13,8 +13,27 @@ module Types
       null: false,
       description: "Return a list of all trades"
 
+    field :trade,
+    Types::GetTradeResponseType,
+    null: true,
+    description: "Returns the trade with the given id if it exists" do
+      argument :id, ID, required: true
+    end
+
     def trades
       Trade.all
+    end
+
+    def trade(id)
+      id_to_find = id[:id].to_i
+      trade = Trade.find_by(id: id_to_find)
+      return {
+        id: id_to_find,
+        status_code: 404,
+        error_message: "record with id: #{id_to_find} does not exist",
+        test: ""
+      } if trade.nil?
+      trade
     end
   end
 end
