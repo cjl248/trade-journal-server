@@ -4,6 +4,9 @@ class SavvyTradeJournalSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
+  # Enable introspection unless in prod
+  enable_introspection! unless !Rails.env.production?
+
   # For batch-loading (see https://graphql-ruby.org/dataloader/overview.html)
   use GraphQL::Dataloader
 
