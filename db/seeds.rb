@@ -1,11 +1,9 @@
 require 'time'
 
-Trade.destroy_all
-
 trades = [
   {
     symbol: 'SPY',
-    trade_type: 1,
+    trade_type: 10,
     quantity: 1000,
     price: 597.77,
     trade_date: Time.utc(year = 2024, month = 11, mday = 2, hour = 3, min = 16, sec = 34),
