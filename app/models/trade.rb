@@ -17,11 +17,6 @@ class Trade < ApplicationRecord
   # level with null constraint
   validates :symbol, presence: true
 
-
-
-
-
-
   # Sets enum values and restricts nil on the model level. Numericality
   # option restricts nil values
   enum :trade_type,

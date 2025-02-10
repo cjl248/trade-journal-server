@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_03_215052) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_10_021018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "trades", force: :cascade do |t|
     t.string "symbol", null: false
     t.integer "trade_type", null: false
-    t.integer "quantity", default: 0
-    t.decimal "price", precision: 10, scale: 2
+    t.integer "quantity", default: 0, null: false
+    t.decimal "price", precision: 10, scale: 2, null: false
     t.datetime "trade_date"
     t.text "notes"
     t.index ["trade_type"], name: "index_trades_on_trade_type"

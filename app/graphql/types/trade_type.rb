@@ -2,11 +2,13 @@
 
 module Types
   class TradeType < Types::BaseObject
-    field :id, ID, null: false
-    field :symbol, String, null: false
+    description "The trade resource of this schema"
+
+    field :id, ID
+    field :symbol, String, null: true
     field :trade_type, Types::OrderType
-    field :quantity, Integer
-    field :price, Float
+    field :quantity, Integer# , null: false
+    field :price, Float# , null: false
     field :trade_date, GraphQL::Types::ISO8601DateTime
     field :notes, String
   end
