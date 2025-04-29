@@ -32,7 +32,7 @@ gem "rack-cors"
 group :development, :test do
   # Testing framework
   gem "rspec-rails", "~> 7.1"
-  gem "shoulda-matchers", "~> 6.4"
+  gem "shoulda-matchers", "~> 6.5"
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
